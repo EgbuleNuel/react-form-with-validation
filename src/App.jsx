@@ -15,26 +15,29 @@ const App = () => {
     {
       id: 1,
       name: "username",
-      type: "text ",
+      type: "text",
       placeholder: "Username",
-      label: "username",
+      label: "Username",
       errorMessage:
-        "Username should be 3-16 characters and should not incllude any special character",
+        "Username should be 3-16 characters and should not include any special character",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
       id: 2,
       name: "email",
-      type: "text ",
+      type: "email ",
       placeholder: "Email",
-      label: "email",
+      label: "Email",
       errorMessage: "Enter a valid Email Address",
+      required: true,
     },
     {
       id: 3,
       name: "birthday",
       type: "date ",
       placeholder: "Birthday",
-      label: "birthday",
+      label: "Birthday",
       errorMessage: "",
     },
     {
@@ -43,8 +46,10 @@ const App = () => {
       type: "Password ",
       placeholder: "Password",
       label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       errorMessage:
         "Password should be 8-20 character and it should include at least 1 letter, 1 number and 1 special character",
+      required: true,
     },
     {
       id: 5,
@@ -52,7 +57,9 @@ const App = () => {
       type: "text ",
       placeholder: "Confirm Password",
       label: "Confirm Password",
-      errorMessage: "Password do not match",
+      patten: values.password,
+      errorMessage: "Passwords do not match",
+      required: true,
     },
   ];
 
